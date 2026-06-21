@@ -533,54 +533,85 @@ export default function Home() {
       <section id="contact" className="py-12 px-6">
         <div className="max-w-6xl mx-auto">
           <SectionHeading title="Get In Touch" />
-          <div className="grid md:grid-cols-2 gap-8">
-
-            {/* Left — info */}
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="glass-card p-8 rounded-2xl flex flex-col gap-6"
-            >
-              <div>
-                <h3 className="text-xl font-bold text-white mb-2">Let&apos;s Connect</h3>
-                <p className="text-slate-400 text-sm leading-7">
-                  I&apos;m open to internships, hackathons, and exciting projects. Feel free to reach out — I&apos;ll get back to you soon!
-                </p>
-              </div>
-              <div className="flex flex-col gap-3">
-                {[
-                  { icon: "📧", label: "jumaanahbasheeth@gmail.com", href: "mailto:jumaanahbasheeth@gmail.com" },
-                  { icon: "💻", label: "github.com/jumaanah-24", href: "https://github.com/jumaanah-24" },
-                  { icon: "🔗", label: "linkedin.com/in/jumaanah-basheeth", href: "https://www.linkedin.com/in/jumaanah-basheeth-868373315/" },
-                ].map(({ icon, label, href }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 px-4 py-3 rounded-xl bg-slate-800/50 border border-slate-700/50 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/50 hover:bg-slate-800 hover:scale-105 transition-all duration-200 text-sm"
-                  >
-                    <span className="text-lg">{icon}</span>
-                    <span>{label}</span>
-                  </a>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Right — message form */}
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="glass-card p-8 rounded-2xl"
-            >
-              <ContactForm />
-            </motion.div>
-
-          </div>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="glass-card p-8 rounded-2xl"
+          >
+            <p className="text-white-400 text-xl leading-7 mb-8">
+              I&apos;m open to internships, hackathons,exciting projects and all other oppurtunities that develop my growth. Feel free to reach out ! 🎉
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                {
+                  icon: (
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                  ),
+                  label: "Email",
+                  value: "jumaanahbasheeth@gmail.com",
+                  href: "mailto:jumaanahbasheeth@gmail.com",
+                  color: "from-cyan-500 to-blue-500",
+                  hover: "hover:border-cyan-500/50 hover:shadow-cyan-500/10",
+                },
+                {
+                  icon: (
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                  ),
+                  label: "LinkedIn",
+                  value: "linkedin.com/in/jumaanah-basheeth",
+                  href: "https://www.linkedin.com/in/jumaanah-basheeth-868373315/",
+                  color: "from-blue-500 to-blue-700",
+                  hover: "hover:border-blue-500/50 hover:shadow-blue-500/10",
+                },
+                {
+                  icon: (
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                  ),
+                  label: "GitHub",
+                  value: "github.com/jumaanah-24",
+                  href: "https://github.com/jumaanah-24",
+                  color: "from-slate-500 to-slate-700",
+                  hover: "hover:border-slate-400/50 hover:shadow-slate-400/10",
+                },
+                {
+                  icon: (
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                  ),
+                  label: "Phone",
+                  value: "+91 8122613484",
+                  href: "tel:+918122613484",
+                  color: "from-green-500 to-emerald-600",
+                  hover: "hover:border-green-500/50 hover:shadow-green-500/10",
+                },
+              ].map(({ icon, label, value, href, color, hover }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target={label !== "Phone" && label !== "Email" ? "_blank" : undefined}
+                  rel="noopener noreferrer"
+                  className={`flex items-center gap-4 px-5 py-4 rounded-2xl bg-slate-800/50 border border-slate-700/50 text-slate-300 hover:scale-105 transition-all duration-300 hover:shadow-lg ${hover}`}
+                >
+                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${color} flex items-center justify-center text-white shrink-0 shadow-lg`}>
+                    {icon}
+                  </div>
+                  <div>
+                    <p className="text-xs text-slate-500 font-medium">{label}</p>
+                    <p className="text-sm text-white font-medium mt-0.5">{value}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -590,81 +621,6 @@ export default function Home() {
       </footer>
 
     </main>
-  );
-}
-
-function ContactForm() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("sending");
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (res.ok) {
-        setStatus("sent");
-        setForm({ name: "", email: "", message: "" });
-        setTimeout(() => setStatus("idle"), 5000);
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
-  };
-
-  return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-      <h3 className="text-xl font-bold text-white mb-1">Send a Message</h3>
-      <div className="flex flex-col gap-1">
-        <label className="text-xs text-slate-400 font-medium">Your Name</label>
-        <input
-          type="text"
-          required
-          placeholder="John Doe"
-          value={form.name}
-          onChange={(e) => setForm({ ...form, name: e.target.value })}
-          className="bg-slate-800/60 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors duration-200"
-        />
-      </div>
-      <div className="flex flex-col gap-1">
-        <label className="text-xs text-slate-400 font-medium">Email Address</label>
-        <input
-          type="email"
-          required
-          placeholder="john@example.com"
-          value={form.email}
-          onChange={(e) => setForm({ ...form, email: e.target.value })}
-          className="bg-slate-800/60 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors duration-200"
-        />
-      </div>
-      <div className="flex flex-col gap-1">
-        <label className="text-xs text-slate-400 font-medium">Message</label>
-        <textarea
-          required
-          rows={4}
-          placeholder="Hi Jumaanah, I'd like to connect..."
-          value={form.message}
-          onChange={(e) => setForm({ ...form, message: e.target.value })}
-          className="bg-slate-800/60 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 transition-colors duration-200 resize-none"
-        />
-      </div>
-      {status === "error" && (
-        <p className="text-red-400 text-xs">Something went wrong. Please try again.</p>
-      )}
-      <button
-        type="submit"
-        disabled={status === "sending" || status === "sent"}
-        className="mt-1 w-full py-3 rounded-xl font-semibold text-sm bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
-      >
-        {status === "sending" ? "Sending..." : status === "sent" ? "✅ Message Sent!" : "Send Message"}
-      </button>
-    </form>
   );
 }
 
