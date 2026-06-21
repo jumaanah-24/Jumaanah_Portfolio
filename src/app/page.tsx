@@ -48,13 +48,13 @@ const skills = [
 const projects = [
   {
     title: "RoadWatch AI - an AI Powered Road Transparency System ",
-    description: "AI-powered road transparency platform used to provide road-related information through an intelligent chatbot. Enabled users to access road maintenance, expenditure, accident statistics, contractor details, and complaint data through a centralized system. Implemented interactive dashboards, analytics, and location-based insights to improve transparency andaccountability in road infrastructure management",
+    description: "AI-powered road transparency platform used to provide road-related information through an intelligent chatbot. Enabled users to access road maintenance, expenditure, accident statistics, contractor details, and complaint data through a centralized system. Implemented interactive dashboards, analytics, and location-based insights to improve transparency and accountability in road infrastructure management",
     tech: ["React", "Python","PostgreSQL"],
     icon: "🛣️",
   },
   {
     title: "Event Managment System",
-    description: "A full-stack MERN  web application designed to streamline event discovery, booking, andmanagement. The platform enables users to browse events, make bookings, leave reviews, and receive notifications—providing aseamless experience for event organizers and attendees.",
+    description: "A full-stack MERN  web application designed to streamline event discovery, booking, and management. The platform enables users to browse events, make bookings, leave reviews, and receive notifications—providing a seamless experience for event organizers and attendees.",
     tech: ["MongoDB","Express.js","React","Node.js"],
     icon: "🏅",
   },
@@ -135,6 +135,8 @@ const codingProfiles = [
 const navLinks = ["About", "Education", "Skills", "Projects", "Achievements", "Coding Profiles", "Contact"];
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <main className="bg-[#020817] text-white min-h-screen overflow-x-hidden">
 
@@ -148,7 +150,7 @@ export default function Home() {
       {/* Navbar */}
       <nav className="fixed top-0 w-full z-50 backdrop-blur-xl bg-slate-950/60 border-b border-white/5">
         <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
-                    <motion.a
+          <motion.a
             href="#"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -156,10 +158,12 @@ export default function Home() {
           >
             👩‍💻 Jumaanah Portfolio
           </motion.a>
+
+          {/* Desktop links */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex gap-6 text-sm font-medium"
+            className="hidden md:flex gap-6 text-sm font-medium"
           >
             {navLinks.map((link) => (
               <a
@@ -172,7 +176,34 @@ export default function Home() {
               </a>
             ))}
           </motion.div>
+
+          {/* Hamburger */}
+          <button
+            className="md:hidden flex flex-col gap-1.5 p-2"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span className={`block w-6 h-0.5 bg-slate-300 transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+            <span className={`block w-6 h-0.5 bg-slate-300 transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+            <span className={`block w-6 h-0.5 bg-slate-300 transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+          </button>
         </div>
+
+        {/* Mobile dropdown */}
+        {menuOpen && (
+          <div className="md:hidden border-t border-white/5 bg-slate-950/95 backdrop-blur-xl px-6 py-4 flex flex-col gap-4">
+            {navLinks.map((link) => (
+              <a
+                key={link}
+                href={`#${link.toLowerCase()}`}
+                onClick={() => setMenuOpen(false)}
+                className="text-slate-300 hover:text-cyan-400 text-sm font-medium transition-colors duration-200"
+              >
+                {link}
+              </a>
+            ))}
+          </div>
+        )}
       </nav>
 
       {/* Hero */}
@@ -555,7 +586,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="py-8 px-6 border-t border-white/5 text-center text-slate-600 text-sm">
-        <p>© 2025 Jumaanah Basheeth. Built with Next.js &amp; Tailwind CSS.</p>
+        <p>© 2026 Jumaanah Basheeth.</p>
       </footer>
 
     </main>
