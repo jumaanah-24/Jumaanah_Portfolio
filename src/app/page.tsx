@@ -47,7 +47,7 @@ const skills = [
 
 const projects = [
   {
-    title: "RoadWatch AI - an AI Powered Road Transparency System ",
+    title: "RoadPulse AI - an AI Powered Road Transparency System ",
     description: "AI-powered road transparency platform used to provide road-related information through an intelligent chatbot. Enabled users to access road maintenance, expenditure, accident statistics, contractor details, and complaint data through a centralized system. Implemented interactive dashboards, analytics, and location-based insights to improve transparency and accountability in road infrastructure management",
     tech: ["React", "Python","PostgreSQL"],
     icon: "🛣️",
@@ -69,7 +69,7 @@ const projects = [
 const achievements = [
   {
     icon: "🏆",
-    title: "TOP 21 Finalist",
+    title: "TOP 21",
     description: "Shortlisted as Finalist in BIMSTEC Road Safety Hackathon conducted by CoERS,IIT MADRAS",
     badge: "Finalist",
   },
