@@ -53,12 +53,6 @@ const projects = [
     icon: "🛣️",
   },
   {
-    title: "Event Managment System",
-    description: "A full-stack MERN  web application designed to streamline event discovery, booking, and management. The platform enables users to browse events, make bookings, leave reviews, and receive notifications—providing a seamless experience for event organizers and attendees.",
-    tech: ["MongoDB","Express.js","React","Node.js"],
-    icon: "🏅",
-  },
-  {
     title: "AlumniTrack - An AI Powered Placement Platform",
     description: "A full-stack platform designed to bridge the gap between Students, Alumni, and Placement Officers that helps students improve their career readiness by leveraging alumni experience and placement insights.",
     tech: ["Next.js","TypeScript","PostgreSQL","Prisma","REST APIs"],
@@ -73,6 +67,12 @@ const projects = [
 ];
 
 const achievements = [
+  {
+    icon: "🏆",
+    title: "TOP 21 Finalist",
+    description: "Shortlisted as Finalist in BIMSTEC Road Safety Hackathon conducted by CoERS,IIT MADRAS",
+    badge: "Finalist",
+  },
   {
     icon: "🏆",
     title: "Mini Project Expo",
@@ -230,7 +230,7 @@ export default function Home() {
             </motion.p>
             <motion.div variants={fadeUp} className="flex gap-4 flex-wrap">
               <a
-                href="/Jumaanah Resume lastupd.pdf"
+                href="/Jumaanah Resume.pdf"
                 target="_blank"
                 className="group relative px-7 py-3 rounded-xl font-semibold text-sm overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300"
               >
