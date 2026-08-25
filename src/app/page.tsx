@@ -32,7 +32,7 @@ const skills = [
   },
   {
     category: "Databases",
-    items: ["MongoDB", "MySQL", "PostgreSQL"],
+    items: ["MongoDB", "MySQL", "PostgreSQL","Prisma"],
   },
   {
     category: "Core Concepts",
@@ -49,7 +49,7 @@ const projects = [
   {
     title: "RoadPulse AI - an AI Powered Road Transparency System ",
     description: "AI-powered road transparency platform used to provide road-related information through an intelligent chatbot. Enabled users to access road maintenance, expenditure, accident statistics, contractor details, and complaint data through a centralized system. Implemented interactive dashboards, analytics, and location-based insights to improve transparency and accountability in road infrastructure management",
-    tech: ["React", "Python","PostgreSQL"],
+    tech: ["React", "Python","PostgreSQL","Prisma"],
     icon: "🛣️",
   },
   {
@@ -68,10 +68,10 @@ const projects = [
 
 const achievements = [
   {
-    icon: "🏆",
-    title: "TOP 21",
+    icon: "🎉",
+    title: "BIMSTEC Road Safety Hackathon",
     description: "Shortlisted as Finalist in BIMSTEC Road Safety Hackathon conducted by CoERS,IIT MADRAS",
-    badge: "Finalist",
+    badge: "🎖️TOP 21",
   },
   {
     icon: "🏆",
@@ -83,6 +83,12 @@ const achievements = [
     icon: "📜",
     title: " ICCISS’26 International Conference",
     description: "Research Paper got Selected at Sona College of Technology",
+    badge: "📰Certification",
+  },
+  {
+    icon: "🎉",
+    title: "HackSpora 2K25 Hackathon",
+    description: "Selected as a Finalist among 140 competing teams - Karpagam Academy of Higher Education",
     badge: "📰Certification",
   },
   {
@@ -230,7 +236,7 @@ export default function Home() {
             </motion.p>
             <motion.div variants={fadeUp} className="flex gap-4 flex-wrap">
               <a
-                href="/Jumaanah Resume.pdf"
+                href="/Jumaanah ResumeUpd.pdf"
                 target="_blank"
                 className="group relative px-7 py-3 rounded-xl font-semibold text-sm overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/50 hover:scale-105 transition-all duration-300"
               >
@@ -306,7 +312,7 @@ export default function Home() {
   <p className="text-slate-300 leading-8 text-lg">
     I have worked on projects ranging from web applications to
     AI-powered solutions, including an Astronomy Image
-    Classification System, RoadWatch AI - an AI Powered Road Transparency System , AlumniTrack - An AI Powered Placement Platform, and Event Managment System.
+    Classification System, RoadPulse AI - an AI Powered Road Transparency System , AlumniTrack - An AI Powered Placement Platform.
      I am continuously learning new technologies and striving to grow
     as a{" "}
     <span className="text-cyan-400 font-medium">
@@ -338,7 +344,7 @@ export default function Home() {
             <div>
               <h3 className="text-xl font-bold text-white">Sri Eshwar College of Engineering</h3>
               <p className="text-slate-300 mt-1">B.E Computer Science and Engineering</p>
-              <p className="text-slate-300 mt-1">CGPA : 8.0 (3rd sem)</p>
+              <p className="text-slate-300 mt-1">CGPA : 8.2 (4th sem)</p>
               <p className="text-slate-500 text-sm mt-1">2024 – 2028</p>
             </div>
           </motion.div>
