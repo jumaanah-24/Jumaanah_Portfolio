@@ -17,7 +17,7 @@ const stagger = {
 const skills = [
   {
     category: "Languages",
-    items: ["C", "C++", "Java"],
+    items: ["C", "C++", "Java","Python"],
   },
   {
     category: "Technologies",
